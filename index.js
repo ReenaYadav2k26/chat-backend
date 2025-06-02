@@ -23,6 +23,11 @@ const corsOption={
 app.use(cors(corsOption)); 
 
 
+
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 // routes
 app.use("/api/v1/user",userRoute); 
 app.use("/api/v1/message",messageRoute);
