@@ -9,10 +9,11 @@ const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
-    cors:{
-        origin:['http://localhost:3000'],
-        methods:['GET', 'POST'],
-    },
+  cors: {
+    origin: ['https://chat-frontend-chi-ecru.vercel.app/'],
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
 });
 
 export const getReceiverSocketId = (receiverId) => {
